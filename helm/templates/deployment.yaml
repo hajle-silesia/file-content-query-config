@@ -41,12 +41,12 @@ spec:
             - name: FILE_CONTENT_ROOT_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: file-content-secret
+                  name: file-content
                   key: file-content-root-username
             - name: FILE_CONTENT_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: file-content-secret
+                  name: file-content
                   key: file-content-root-password
           livenessProbe:
             httpGet:
