@@ -39,15 +39,12 @@ spec:
               protocol: TCP
           env:
             - name: FILE_CONTENT_ROOT_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: file-content
-                  key: file-content-root-username
+              value: root
             - name: FILE_CONTENT_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: file-content
-                  key: file-content-root-password
+                  name: file-content-mongodb
+                  key: mongodb-root-password
           livenessProbe:
             httpGet:
               path: /api/healthz
